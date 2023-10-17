@@ -45,7 +45,36 @@ Then, we ping abimanyu.i03.com and also www.abimanyu.i03.com to see if the setup
 //image ping abimanyu
 
 # No 4
-The question asked us to 
+The question asked us to make a subdomain on DNSMaster-Yudhistira for abimanyu.i03.com that has the name of parikesit.abimanyu.i03.com.
+To do this, we configure the bind file of abimanyu as such,
+
+//image bind/jarkom/abimanyu.i03.com
+
+Then we restart the bind service using ```service bind9 restart```
+
+After that we will try to ping it from client to see if the setup was succesfull
+
+//image ping parikesit
+
+# No 5
+We are told to make the reverse domain for abimanyu. The IP for abimanyu.i03.com is Yudhistira's IP, which is ```10.60.1.3``` that mean we can take the first 3 numbers and reverse the order. This means that the reverse uses ```1.60.1.in-addr.arpa```. We then set up the named.conf.local file on Yudhistira that includes ```1.60.1.in-addr.arpa```
+
+//image named.conf.local
+
+Restart the bind service as always using ```service bind9 restart```
+
+Then to test if the setup is succesfull we can use this in the client
+```c
+apt-get update
+apt-get install dnsutils
+```
+We should also add
+```c 
+host -t PTR 10.60.1.3
+```
+A success setup will resulted in this
+
+//image setelah host -t PTR 10.60.1.3
 
 # Bash commands that texist within each node:
 - Pandudewanata:
