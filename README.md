@@ -2,7 +2,7 @@
 Lapres Praktikum Jarkom Modul 2 2023
 
 - M. Ghifari Taqiuddin - 5025211063
- Fauzan Ahmad Faisal - 5025211067
+- Fauzan Ahmad Faisal - 5025211067
 
 # No 1
 //image topologi
